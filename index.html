@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do You Have a Camera Eye?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <h1>Do You Have a Camera Eye?</h1>
+      <p>Every photo here is crowded. Move and resize the viewfinder to find the best shot hiding inside it, then press Shoot.</p>
+    </header>
+
+    <nav class="strip" id="strip" aria-label="Photos"></nav>
+
+    <section class="camera" aria-label="Camera">
+      <div class="stage" id="stage">
+        <div class="photo" id="photo">
+          <div class="photo-clip">
+            <img id="photo-img" alt="" draggable="false">
+            <div class="shade" id="shade"></div>
+            <div class="flash" id="flash"></div>
+          </div>
+          <div class="frame" id="frame" data-handle="move" tabindex="0" role="group"
+               aria-label="Viewfinder" aria-describedby="frame-help">
+            <span class="handle corner" data-handle="nw"></span>
+            <span class="handle corner" data-handle="ne"></span>
+            <span class="handle corner" data-handle="sw"></span>
+            <span class="handle corner" data-handle="se"></span>
+            <span class="handle side" data-handle="n"></span>
+            <span class="handle side" data-handle="s"></span>
+            <span class="handle side" data-handle="w"></span>
+            <span class="handle side" data-handle="e"></span>
+          </div>
+          <svg class="marks" id="marks" aria-hidden="true"></svg>
+        </div>
+      </div>
+      <p id="frame-help" class="visually-hidden">
+        Arrow keys move the viewfinder, plus and minus resize it, and Enter takes the shot.
+      </p>
+
+      <div class="controls">
+        <div class="ratios" id="ratios" role="group" aria-label="Frame shape"></div>
+        <button type="button" class="shutter" id="shoot">Shoot</button>
+      </div>
+    </section>
+
+    <section class="print" id="result" aria-live="polite">
+      <p class="hint">Loading photos…</p>
+    </section>
+
+    <section class="print marker" id="marker" hidden></section>
+  </main>
+
+  <script src="data/photos.js"></script>
+  <script src="data/color-grids.js"></script>
+  <script src="js/composition.js"></script>
+  <script src="js/color.js"></script>
+  <script src="js/marker.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
